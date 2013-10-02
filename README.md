@@ -5,6 +5,7 @@ Science Feeds retrieval and filtering
 
 
 this was an overnight hack. use at your own risk!
+---> watch this video for a brief example usage http://sciple.org/blog/neuroreader2/
 
 I have simply injected my own hacky code into the feedek jQuery plugin (https://github.com/enginkizil/FeedEk)
 
