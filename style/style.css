@@ -1,0 +1,181 @@
+* {
+    /*font-family: helvetica;*/
+    font-family: trebuchet MS;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+body{
+    background-color: #f5f5f5;
+
+}
+#moveTop{
+    padding: 10px;
+    background-color:#000;
+    opacity: 0.5;
+    color: #fff;
+    position: fixed;
+    right: 0px;
+    bottom: 200px;
+    border-radius: 6px 0 0 6px;
+}
+#moveTop:hover{
+    opacity: 1;
+}
+
+#welcome{
+    background-image: url("../images/icon.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 24% auto;
+    height: 800px;
+    width: 100%;
+}
+header {
+    background:#fff;
+    opacity: 0.8;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+}
+#dropArea{
+    border: 4px dashed #aaa;
+    text-shadow: 0 1px #fff;
+    border-radius: 6px 6px 6px 6px;
+    position: fixed;
+    right: 30px;
+    top: 100px;
+    width: 100px;
+}
+#dropArea:hover{
+    border-color: #2E62D9;
+    }
+#files {
+    border: 1px solid blue;
+    border-radius: 4px;
+    color: #888888;
+    width: 100%;
+    height:30px;
+    opacity: 0;
+}
+#message{
+    color: #666;
+    text-shadow: 0 1px #FFFFFF;
+    font-size: 1.1em;
+    font-style: italic;
+    position: fixed;
+    right: 22px;
+    top: 70px;
+}
+#wrapper{
+    margin-top: 60px;
+}
+#txtQuery{
+    border: 1px solid #1e449b;
+    border-radius: 2px 2px 2px 2px;
+    color: #444444;
+    font-size: 1.1em;
+    margin: 12px;
+    padding: 6px;
+    width: 55%;
+}
+#queryFeed {
+    background:#1E449B;
+    color: #FFFFFF;
+    font-size: 1em;
+    height: 34px;
+    padding: 6px;
+    width: 105px;
+}
+#queryFeed:hover {
+    background-color:#2E62D9;
+    cursor: pointer;
+}
+.journalName {
+    color: #587CCE;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    margin-left: -100px;
+    margin-top: 30px;
+    text-shadow: 0 1px #fff;
+    border-bottom: 1px dotted #ccc
+}
+li{
+    color: #666;
+    list-style: none;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    padding: 8px 3px;
+    background-color: #fff;
+}
+.itemTitle{
+    margin-bottom: 2px;
+    color: #fff;
+    padding: 4px;
+    border-radius: 2px;
+    border-bottom: 1px solid #bcbcbc;
+    font-weight: bold;
+}
+.itemDate{
+    margin-bottom: 4px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #999;
+}
+.recentFeed{
+    color: #FF0002;
+    color: #bbb;
+    font-size: 0.9em;
+    left: -105px;
+    letter-spacing: 1px;
+    position: relative;
+    text-shadow: 0 1px #FFFFFF;
+    width: 81px;
+}
+a{
+    text-decoration: none;
+    color: #fff;overflow: hidden;
+}
+.itemTitle a{
+    color:#587CCE;
+    text-decoration:none
+}
+.itemAuthor{
+    color: #444444;
+    font-size: 0.9em;
+    font-style: italic;
+    margin: 10px 0;
+}
+.itemTitle a:hover{
+    text-decoration:underline;
+}
+.itemContent{
+    font-size: 1em;
+    margin-bottom: 10px
+}
+.container{
+    width: 68%;
+    margin-left: 12%;
+    padding: 4px;
+}
+.myTag {
+    font-size: 0.9em;
+    margin-right: 4px;
+    color:#fff;
+    clear: both;
+    float: left;
+    font-size: 0.8em;
+    left: 100%;
+    margin-bottom: 4px;
+    padding: 4px 10px;
+    position: relative;
+    top: -90px;
+}
