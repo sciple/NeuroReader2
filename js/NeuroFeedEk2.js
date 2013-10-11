@@ -11,7 +11,7 @@ colors = new Array(14)
 colors[0]="#4B7F7F";
 colors[1]="#E9AA27";
 colors[2]="#719382";
-colors[3]="#D2E3AF";
+colors[3]="#90A16D";
 colors[4]="#DF230C";
 colors[5]="#D2E3AF";
 colors[5]="#426060";
@@ -22,7 +22,7 @@ colors[9]="#ABC674";
 colors[10]="#859567";
 colors[11]="#638126";
 colors[12]="#CBE39D";
-colors[13]="#D2E3AF";
+colors[13]="#90A16D";
 
 
 function searchKey(cue,target){
@@ -31,7 +31,7 @@ function searchKey(cue,target){
 }
 
 
-(function (e) { e.fn.FeedEk = function (t, queryIN, jName, queryType){
+(function (e) { e.fn.FeedEk = function (t, queryIN, jName, queryType, coverImage){
 	var n = {
 		FeedUrl: "http://rss.cnn.com/rss/edition.rss",
 		MaxCount: 5,
@@ -55,7 +55,7 @@ function searchKey(cue,target){
 			var s = "";
 			var w = "";
 			var interesting=false;
-			s+='<p class="journalName">'+jName+'</p>';
+			s+='<p class="journalName">'+jName+'</p><img class="coverImage" src="'+coverImage+'">';
 			e.each(t.responseData.feed.entries,function (e, t){
 
 				feedDate = new Date(t.publishedDate);
