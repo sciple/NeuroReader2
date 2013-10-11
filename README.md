@@ -3,7 +3,7 @@ NeuroReader2
 
 Science Feeds retrieval and filtering
 
-![Alt text](https://github.com/sciple/NeuroReader2/blob/master/images/Screen_Shot.png "Optional title")
+![Alt text](/images/Screen_Shot.png "Optional title")
 
 
 this was an overnight hack. use at your own risk!
