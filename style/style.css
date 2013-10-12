@@ -172,10 +172,10 @@ a{
     clear: both;
     float: left;
     font-size: 0.8em;
-    left: 100%;
+    left: 101%;
     margin-bottom: 4px;
     padding: 4px 10px;
     position: relative;
     top: -90px;
-    border: 1px solid #AAA;
+    border: 1px solid #666;
 }

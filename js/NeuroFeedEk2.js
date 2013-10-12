@@ -8,21 +8,19 @@
 
 
 colors = new Array(14)
-colors[0]="#4B7F7F";
-colors[1]="#E9AA27";
-colors[2]="#719382";
-colors[3]="#90A16D";
-colors[4]="#DF230C";
-colors[5]="#D2E3AF";
-colors[5]="#426060";
-colors[6]="#185353";
-colors[7]="#84BFBF";
-colors[8]="#94BFBF";
-colors[9]="#ABC674";
-colors[10]="#859567";
-colors[11]="#638126";
-colors[12]="#CBE39D";
-colors[13]="#90A16D";
+colors[0]="#ff0000";
+colors[1]="#FF3300";
+colors[2]="#ff6600";
+colors[3]="#FFCC00";
+colors[4]="#FFFF00";
+colors[5]="#ccff00";
+colors[5]="#99ff00";
+colors[6]="#66ff00";
+colors[7]="#33ff00";
+colors[8]="#00FF00";
+colors[9]="#ffa000";
+colors[10]="#ffb000";
+colors[11]="#ffc000";
 
 
 function searchKey(cue,target){
