@@ -65,7 +65,6 @@ $(document).ready(function(){
 
 
 	$("#queryFeed").click(function () {
-        
         // scroll page to top
         scrollUP();
         
@@ -74,7 +73,8 @@ $(document).ready(function(){
         var query = inputQuery.split(",");
 
         // activate boolean search on first list item
-        if (query[0].toLowerCase().indexOf("boolean")>-1){
+        // if (query[0].toLowerCase().indexOf("boolean")>-1){
+        if (query[0].toLowerCase().indexOf("[")>-1){
             typeofQuery=true;
         }
         

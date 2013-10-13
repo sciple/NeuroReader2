@@ -7,7 +7,7 @@
 */
 
 
-colors = new Array(14)
+colors = new Array(11)
 colors[0]="#ff0000";
 colors[1]="#FF3300";
 colors[2]="#ff6600";
@@ -28,8 +28,8 @@ function searchKey(cue,target){
 	return (result);
 }
 
-
 (function (e) { e.fn.FeedEk = function (t, queryIN, jName, queryType, coverImage){
+
 	var n = {
 		FeedUrl: "http://rss.cnn.com/rss/edition.rss",
 		MaxCount: 5,
@@ -41,6 +41,7 @@ function searchKey(cue,target){
 	if (t) {
 		e.extend(n, t)
 	}
+
 	var r = e(this).attr("id");
 	var i;
 	serialN=0
@@ -50,6 +51,7 @@ function searchKey(cue,target){
 		dataType: "json",
 		success: function (t){	
 			e("#" + r).empty();
+			
 			var s = "";
 			var w = "";
 			var interesting=false;
@@ -68,15 +70,20 @@ function searchKey(cue,target){
 					if(queryType){
 
 						// search the boolean key 
-						booleanTitle = searchKey(queryIN[1],t.title);
-						booleanAuthor = searchKey(queryIN[1],t.author);
-						booleanContent = searchKey(queryIN[1],t.content);
+						booleanTitle = searchKey(queryIN[0].slice(1,-1),t.title);
+						booleanAuthor = searchKey(queryIN[0].slice(1,-1),t.author);
+						booleanContent = searchKey(queryIN[0].slice(1,-1),t.content);
+
+						// booleanTitle = searchKey(queryIN[1],t.title);
+						// booleanAuthor = searchKey(queryIN[1],t.author);
+						// booleanContent = searchKey(queryIN[1],t.content);
 
 						// if the boolean key is found in title author or content fields
 						if(booleanTitle || booleanAuthor || booleanContent){
 							
 							//loop over keywords list
-							for (var i=2;i<queryIN.length;i++) {
+							// for (var i=2;i<queryIN.length;i++) {
+							for (var i=1;i<queryIN.length;i++) {
 								
 								// search the keywords
 								var titleKey = searchKey(queryIN[i],t.title);
@@ -86,7 +93,7 @@ function searchKey(cue,target){
 								// if keys in the boolean subset, then display feeds
 								if (titleKey || authorKey || contentKey){
 									interesting=true;
-									w+='<span class="myTag '+queryIN[i]+'" style="background:'+colors[i]+'">'+queryIN[i]+'</span>';
+									w+='<span class="myTag '+queryIN[i]+'" style="background-color:'+colors[i]+'">'+queryIN[i]+'</span>';
 								}
 							}
 						}
@@ -111,23 +118,23 @@ function searchKey(cue,target){
 					// only display feeds containing keywords
 					if (interesting){
 						s += '<li><div class="itemTitle"><a href="' + t.link + '" target="' + n.TitleLinkTarget + '" >' + t.title + "</a></div>";
-						s += '<div class="itemAuthor">'+t.author+'</div>'
+						s += '<div class="itemAuthor"><span><img src="images/usr.png"></span>'+t.author+'</div>'
 
 						if (n.ShowPubDate) {
 							i = new Date(t.publishedDate);
 
 							// Highlight recent feeds (less than 4 days old)
 							if (diffDays<=3){
-								s += '<div class="itemDate recentFeed">' + i.toLocaleDateString() + "</div>"
+								s += '<div class="itemDate recentFeed"><span><img src="images/cal.png"></span>' + i.toLocaleDateString() + "</div>"
 							}
 							else{
-								s += '<div class="itemDate">' + i.toLocaleDateString() + "</div>"
+								s += '<div class="itemDate"><span><img src="images/cal.png"></span>' + i.toLocaleDateString() + "</div>"
 							}
 						}
 						if (n.ShowDesc) {
 							// display tag containing the detected keyword along with the feed content
 							if (n.DescCharacterLimit > 0 && t.content.length > n.DescCharacterLimit){
-								s += '<div class="itemContent">' + t.content.substr(0, n.DescCharacterLimit) + '...</div><span class="star">'+w+'</span>';
+								s += '<div class="itemContent">' + t.content.substr(0, n.DescCharacterLimit) + '...</div><span class="star"><img src="images/tag.png" class="tagImg">'+w+'</span>';
 								w="";
 								interesting=false;
 							}
@@ -136,6 +143,8 @@ function searchKey(cue,target){
 					};
 				// else {s += '<div class="itemContent">' +t.content + "</div>";}
 			}});
+
 e("#" + r).append('<ul class="feedEkList">' + s + "</ul>") } }) } })(jQuery)
+
 
 
