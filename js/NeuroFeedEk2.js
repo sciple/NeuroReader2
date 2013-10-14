@@ -117,7 +117,7 @@ function searchKey(cue,target){
 
 					// only display feeds containing keywords
 					if (interesting){
-						s += '<li><div class="itemTitle"><a href="' + t.link + '" target="' + n.TitleLinkTarget + '" >' + t.title + "</a></div>";
+						s += '<li><div class="itemTitle">&#9002;&#9002;&#9002; <a href="' + t.link + '" target="' + n.TitleLinkTarget + '" >' + t.title + "</a></div>";
 						s += '<div class="itemAuthor"><span><img src="images/usr.png"></span>'+t.author+'</div>'
 
 						if (n.ShowPubDate) {

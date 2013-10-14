@@ -59,10 +59,10 @@ header {
     top: 70px;
 }
 #wrapper{
-     margin-left: 14;
+     margin-left: 10%;
  /*   margin-right: auto;*/
     margin-top: 60px;
-    width: 92%;
+    width: 70%;
 }
 #txtQuery{
     border: 1px solid #1e449b;
@@ -101,6 +101,17 @@ li{
     margin-bottom: 30px;
     padding: 32px 3px;
 }
+
+#item{
+    background-color: rgba(0, 0, 0, 0);
+    /*border-bottom: 1px solid #AAAAAA;*/
+    color: #999999;
+    list-style: none outside none;
+    margin-bottom: 30px;
+    padding: 32px 3px;
+}
+
+
 .coverImage{
     width: 100px;
 }
