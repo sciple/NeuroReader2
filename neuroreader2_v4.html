@@ -55,6 +55,7 @@
 
     mega=[];
     interesting =false;
+    jcover = ""
 
     function searchKey(cue,target){
       result = target.toLowerCase().indexOf(cue.toLowerCase())>-1;
@@ -65,22 +66,22 @@
                   
     function findFeed(queryList,queryType) {
       
-      for (var i = 0; i < journals.length; i++) {  
+      for (var x = 0; x < journals.length; x++) {  
+        jcover = journals[x].cover
 
-      var feed = new google.feeds.Feed(journals[i].url);
+      var feed = new google.feeds.Feed(journals[x].url);
+      
       var container = document.getElementById("feed");
       feed.setNumEntries(150);
 
       feed.load(function(result) {
         if (!result.error) {
           
-
           // loop over feed entries
           for (var i = 0; i < result.feed.entries.length; i++) {
             
             // feed item
             var entry = result.feed.entries[i];
-
 
           // -----------IF BOOLEAN DO THIS
           if (queryType){
@@ -93,15 +94,14 @@
                 var tags = ''
                 var tagCounter =0;
                 for (var j=1;j<queryList.length;j++) {
-              // only display feeds matching the query
                   var titleKey = searchKey(queryList[j],entry.title);
                   var authorKey = searchKey(queryList[j],entry.author);
                   var contentKey = searchKey(queryList[j],entry.content);
                   if(titleKey || authorKey || contentKey){
-                  tags+='<span class="myTag '+queryList[j]+'" style="background-color:'+colors[j]+'">'+queryList[j]+'</span>';
-                  tagCounter+=1
-                  interesting =true;
-                }
+                    tags+='<span class="myTag '+queryList[j]+'" style="background-color:'+colors[j]+'">'+queryList[j]+'</span>';
+                    tagCounter+=1
+                    interesting =true;
+                  }
                 }
               }
             }
@@ -109,7 +109,7 @@
             else{
               // loop over keywords list
               var tags = ''
-              var tagCounter =0;
+              var tagCounter = 0;
               for (var j=0;j<queryList.length;j++) {
                 
                 var titleKey = searchKey(queryList[j],entry.title);
@@ -126,21 +126,19 @@
             }
             
             if(interesting){
-                combo=''
+                combo='';
+                s ='<img class="coverImage" src="'+journals[j].cover+'">';
                 var title = '<div class="itemTitle">&#9002;&#9002;&#9002; <a href="' + entry.link + '" target="_blank" >' + entry.title + "</a></div>";
                 var author = '<div class="itemAuthor"><span><img src="images/usr.png"></span>'+entry.author+'</div>'
                 var content = '<div class="itemContent">'+entry.content.substr(0, 250)+'...</div><img src="images/tag.png" class="tagImg">';
-                combo = title+author+content+tags;
+                combo =  title+author+content+tags;
                 subject = new Object();
                 subject.text=combo;
                 subject.rank=tagCounter;
                 mega.push(subject)
                 interesting=false;
-
             }
-//----------------
           }
-
         }
       });
             function compare(a,b) {
