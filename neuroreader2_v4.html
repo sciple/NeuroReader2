@@ -124,14 +124,15 @@
                 }
               }
             }
-            
+           
             if(interesting){
                 combo='';
                 s ='<img class="coverImage" src="'+journals[j].cover+'">';
                 var title = '<div class="itemTitle">&#9002;&#9002;&#9002; <a href="' + entry.link + '" target="_blank" >' + entry.title + "</a></div>";
-                var author = '<div class="itemAuthor"><span><img src="images/usr.png"></span>'+entry.author+'</div>'
+                var author = '<div class="itemAuthor"><span><img src="images/usr.png"></span>'+entry.author+'</div>';
+                var social = '<div class="mail"><a href="mailto:?Subject='+entry.title.substr(0, 100)+'...?&body='+entry.title+'%0D'+entry.link+'%0D%0D" target="_top"><img class="mailImg" src="images/mail.png"></a> <span class="tweet"><img class="tweetImg" src=images/twitter.png></span></div>';
                 var content = '<div class="itemContent">'+entry.content.substr(0, 250)+'...</div><img src="images/tag.png" class="tagImg">';
-                combo =  title+author+content+tags;
+                combo =  title+author+social+content+tags;
                 subject = new Object();
                 subject.text=combo;
                 subject.rank=tagCounter;

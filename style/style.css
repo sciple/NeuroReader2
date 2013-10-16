@@ -187,11 +187,23 @@ a{
     top: -90px;
     border: 1px solid #666;
 }*/
+.mail {
+    border: 1px dotted #AAAAAA;
+    margin-bottom: 8px;
+    padding: 8px 4px 4px 8px;
+    width: 49px;
+}
 .tagImg{
     float: left;
     height: 20px;
     margin-right: 10px;
     margin-top: 4px;
+}
+.mailImg{
+    height: 16px;
+}
+.tweetImg {
+    height: 15px;
 }
 .myTag{
     color: #FFFFFF;
