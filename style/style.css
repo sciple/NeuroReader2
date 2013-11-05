@@ -14,7 +14,6 @@ body{
     background-attachment: fixed;
     background-image: url("../images/blur.JPG");
 }
-
 #welcome{
     background-image: url("../images/icon.png");
     background-position: center center;
@@ -57,6 +56,11 @@ header {
     position: fixed;
     right: 56px;
     top: 70px;
+}
+#legend{
+    position: fixed;
+    top: 300px;
+    right: 50px;
 }
 #wrapper{
      margin-left: 10%;
@@ -187,23 +191,36 @@ a{
     top: -90px;
     border: 1px solid #666;
 }*/
-.mail {
+.social {
     border: 1px dotted #AAAAAA;
     margin-bottom: 8px;
-    padding: 8px 4px 4px 8px;
-    width: 49px;
+    padding: 8px 4px 7px 8px;
+    width: 60px;
+}
+.mail{
+   background-image: url("../images/mail.png");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    padding: 2px 13px;
+}
+.mail:hover{
+    background-position: 0 -24px;
+}
+.twitter{
+    background-image: url("../images/twitter.png");
+    background-position: 0 4px;
+    background-repeat: no-repeat;
+    padding: 2px 13px;
+    margin-left: 10px
+}
+.twitter:hover{
+    background-position: 0 -19px;
 }
 .tagImg{
     float: left;
     height: 20px;
     margin-right: 10px;
     margin-top: 4px;
-}
-.mailImg{
-    height: 16px;
-}
-.tweetImg {
-    height: 15px;
 }
 .myTag{
     color: #FFFFFF;
